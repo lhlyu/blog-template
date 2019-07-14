@@ -1,0 +1,59 @@
+body,html{
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    /*width: 100vw;*/
+    background-color: #fff;
+}
+
+.yu-font{
+    font-size:0.75rem;
+    font-family:"微软雅黑","microsoft yahei";
+}
+.yu-container{
+    padding: 0;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.yu-header{
+    border-bottom: solid 1px #b5b5b5;
+}
+
+.yu-theme {
+    background-color: #fff;
+}
+
+.yu-top{
+    margin-top: 1rem;
+}
+
+.yu-bottom{
+    margin-bottom: 1rem;
+}
+
+.yu-left{
+    margin-left: 1rem;
+}
+
+.yu-card{
+    border:0;
+}
+
+.yu-tx{
+    width: 5rem;
+    text-align: center;
+}
+
+.yu-footer {
+    padding-top: 1rem;
+    padding: 0 0 1.5rem 0;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 1rem;
+    margin: 0;
+    color: #666;
+}
