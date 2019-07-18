@@ -1,0 +1,146 @@
+html, body, * {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    word-wrap: break-word;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+html, body {
+    min-height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background: #f0f0f0;
+    font-size:0.8rem;
+    font-family:"微软雅黑","microsoft yahei";
+}
+
+a{
+    outline: 0;
+    text-decoration: none;
+}
+
+header{
+    min-height: 2.625rem;
+    color: #000000;
+    margin: 0 auto;
+    background: #ffffff;
+    box-shadow: 10px 10px 3px #0a0a0a;
+}
+
+.yu-header{
+    width: 1280px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.yu-header-m{
+    display: none;
+}
+.yu-header-main{
+    zoom: 1;
+    width: 1280px;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 100%;
+    position: relative;
+}
+
+.yu-title{
+    line-height: 2.625rem;
+    float: left;
+    height: 100%;
+    margin: 0 20px;
+    position: relative;
+}
+.yu-title a{
+    color: #000;
+    font-size: 1.375rem;
+}
+
+.yu-menu-main{
+    display: inline-block;
+}
+.yu-menu-main ul{
+    list-style: none;
+    z-index: 1;
+}
+.yu-menu-main ul li{
+    float: left;
+    text-align: center;
+    line-height: 2.625rem;
+    height: 2.625rem;
+    background-color: hsla(0,0%,100%,0);
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    position: relative;
+}
+
+.yu-menu-main ul li a{
+    color: #222;
+    height: 100%;
+    display: block;
+    padding: 0 11px;
+    cursor: pointer;
+}
+
+.yu-search{
+    position: relative;
+    float: right;
+    margin-right: 10px;
+    line-height: 2.625rem;
+    cursor: pointer;
+    font-size: 1.3rem;
+}
+
+@media only screen and (max-width: 900px) {
+    div, a, img {
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    .yu-header{
+        display: none;
+    }
+    .yu-header-m{
+        max-width: 100%;
+        display: block;
+    }
+    .yu-header-main{
+        text-align: center;
+    }
+    .yu-menu-slide{
+        line-height: 2.625rem;
+        float: left;
+        height: 100%;
+        margin: 0 20px;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+    .yu-title{
+        line-height: 2.625rem;
+        height: 100%;
+        margin: 0 auto;
+        float: none;
+        position: relative;
+    }
+    .yu-search{
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        float: right;
+        margin-right: 10px;
+        line-height: 2.625rem;
+        cursor: pointer;
+        font-size: 1.3rem;
+    }
+}
