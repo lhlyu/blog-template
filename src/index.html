@@ -8,21 +8,24 @@
 
      <link rel="stylesheet" type="text/css" href="./statics/third-party/font-awesome/css/font-awesome.min.css">
     <!--<link href="https://cdn.bootcss.com/font-awesome/5.10.0-11/css/all.min.css" rel="stylesheet">-->
-    <link rel="stylesheet" type="text/css" href="./statics/global/css/global.css">
+    <link rel="stylesheet" type="text/css" href="./statics/global/css/animation.css">
+    <link rel="stylesheet" type="text/css" href="./statics/global/css/base.css">
+    <link rel="stylesheet" type="text/css" href="./statics/global/css/normal.css">
+    <link rel="stylesheet" type="text/css" href="./statics/global/css/small.css">
     <script src="./statics/third-party/jquery/jquery.min.js"></script>
-    <script src="./statics/global/js/global.js"></script>
+    <script src="./statics/global/js/base.js"></script>
 
 </head>
 <body>
 <!-- header -->
 <header id="header">
     <!-- big screen header -->
-    <div class="yu-header">
-        <div class="yu-header-main">
+    <div class="yu-header yu-header-pc">
+        <div class="yu-header-main yu-header-pc-main">
 
-            <h1 class="yu-title"><a href="#">Lhlyu</a></h1>
+            <h1 class="yu-title yu-header-pc-title"><a href="#">Lhlyu</a></h1>
             <span> </span>
-            <div class="yu-menu-main">
+            <div class="yu-menu-main yu-header-pc-menu">
                 <ul>
                     <li>
                         <a href="#"><i class="fa fa-home"></i> 首页</a>
@@ -38,7 +41,7 @@
                     </li>
                 </ul>
             </div>
-            <span class="yu-search fa fa-search"></span>
+            <span class="yu-search yu-header-pc-search fa fa-search"></span>
 
         </div>
     </div>
@@ -46,22 +49,22 @@
 
     <!-- small screen header -->
     <div class="yu-header-m">
-        <div class="yu-header-main">
-            <span class="yu-menu-slide">
+        <div class="yu-header-main yu-header-m-main">
+            <span class="yu-menu-slide yu-menu-btn">
                 <i class="pointer fa fa-bars"></i>
             </span>
             <span> </span>
-            <h1 class="yu-title"><a href="#">Lhlyu</a></h1>
+            <h1 class="yu-title yu-header-m-title"><a href="#">Lhlyu</a></h1>
             <span> </span>
-            <span class="yu-search fa fa-search"></span>
+            <span class="yu-search yu-header-m-search fa fa-search"></span>
         </div>
-        <div class="yu-slide">
+        <div class="yu-slide yu-header-m-slide">
             <img src="./statics/global/img/tx.jpg" class="avatar" alt="lhlyu">
             <h2>Lhlyu</h2>
-            <div class="yu-menu-main">
+            <div class="yu-menu-main yu-header-m-menu">
                 <ul>
                     <li>
-                        <a href="#"><i class="fa fa-home"></i> 首页</a>
+                        <a class="active" href="#"><i class="fa fa-home"></i> 首页</a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-archive"></i> 归档</a>
@@ -74,7 +77,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="yu-slide-shadow"></div>
+            <div class="yu-slide-shadow yu-header-m-slide-shadow"></div>
         </div>
     </div>
     <!-- small screen header -->
@@ -92,9 +95,9 @@
 <!-- hide -->
 <div>
     <div class="yu-shadow hide"></div>
-    <div class="yu-pop-search hide">
-        <div class="yu-search-head">
-            请输入你想搜索的内容：<i class="yu-search-close pointer fa fa-close"></i>
+    <div class="yu-pop-search yu-modal-search hide">
+        <div class="yu-search-head yu-modal-search-head">
+            请输入你想搜索的内容：<i class="yu-search-close yu-modal-search-close pointer fa fa-close"></i>
         </div>
         <input class="keyword" placeholder="">
     </div>
