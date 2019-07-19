@@ -25,11 +25,21 @@ a{
     outline: 0;
     text-decoration: none;
 }
+
+button, input, textarea {
+    -webkit-appearance: none;
+    outline: 0;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
 .show{
     display: block;
 }
 .hide{
     display: none;
+}
+.pointer{
+    cursor: pointer;
 }
 
 #header{
@@ -103,6 +113,58 @@ a{
     cursor: pointer;
     font-size: 1.3rem;
 }
+.yu-shadow{
+    z-index: 9999;
+    background-color: #000;
+    opacity: .3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.yu-pop-search{
+    padding: 20px 0 16px;
+    border-bottom: 1px solid #e7e7e7;
+    text-align: center;
+    background: #fff;
+    cursor: default;
+    z-index: 10000;
+    position: fixed;
+    width: 300px;
+    left: 50%;
+    top: 50%;
+    margin-left: -150px;
+    margin-top: -50px;
+    -webkit-box-shadow: rgba(0,0,0,.2) 0 0 5px 0;
+    box-shadow: rgba(0,0,0,.2) 0 0 5px 0;
+    border-radius: 4px;
+    animation:fade-animation 0.5s ease;
+}
+
+.yu-pop-search.hide{
+    animation:hide-animation 1.5s ease;
+}
+
+
+.yu-search-head{
+    text-align: left;
+    padding: 0 18px;
+    font-weight: bold;
+}
+.yu-search-head .pointer{
+    float: right;
+}
+.keyword{
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    width: 264px;
+    margin: 5px 18px;
+    border-bottom: 1px solid #e5e9ef;
+}
+
 
 @media only screen and (max-width: 900px) {
     div, a, img {
@@ -202,7 +264,7 @@ a{
         font-weight:600;
     }
 
-    .yu-slide-plur {
+    .yu-slide-shadow {
         position: absolute;
         z-index: -1;
         width: 100%;
@@ -219,4 +281,15 @@ a{
         top: 0;
         left: 2px;
     }
+}
+
+@keyframes fade-animation{
+    0%{opacity: 0;}
+    50%{opacity: 0.5;}
+    100%{opacity: 1;}
+}
+@keyframes hide-animation{
+    100%{opacity: 1;}
+    50%{opacity: 0.5;}
+    0%{opacity: 0;}
 }

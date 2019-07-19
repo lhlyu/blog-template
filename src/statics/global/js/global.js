@@ -1,9 +1,7 @@
 $(function(){
-    console.log(1)
+
     $(document).on('click',".yu-menu-slide",function(){
-        console.log("click")
         var hasShow = $(".yu-slide").hasClass("show");
-        console.log("hasShow = ",hasShow)
         if(hasShow){
             $(".yu-slide").removeClass("show");
             $(".yu-header-main").removeClass("show");
@@ -12,4 +10,35 @@ $(function(){
             $(".yu-header-main").addClass("show");
         }
     });
+
+    $(document).on('click',".yu-search",function(){
+        var hasHide = $(".yu-pop-search").hasClass("hide");
+        if(hasHide){
+            $(".yu-pop-search").removeClass("hide");
+            $(".yu-shadow").removeClass("hide");
+        }
+    });
+
+    $(document).on('click',".yu-search-close",function(){
+        var hasHide = $(".yu-pop-search").hasClass("hide");
+        if(!hasHide){
+            $(".yu-pop-search").addClass("hide");
+            $(".yu-shadow").addClass("hide");
+        }
+    });
+
+    $(document).on('click',".yu-shadow",function(){
+        $(".yu-search-close").click()
+    });
+
+    $(document).keypress(function(e) {
+        var hasHide = $(".yu-pop-search").hasClass("hide");
+        if(!hasHide){
+            // 回车键事件
+            if(e.which == 13) {
+                alert($(".keyword").val())
+            }
+        }
+    });
+
 });
