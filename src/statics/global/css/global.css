@@ -1,295 +1,331 @@
-html, body, * {
+*,body,html {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
     border: 0;
-    word-wrap: break-word;
-    box-sizing: border-box;
-    background: transparent;
-    -webkit-box-sizing: border-box;
+    background: 0 0;
+    word-wrap: break-word
 }
 
-html, body {
-    min-height: 100%;
-    width: 100%;
+body,html {
     overflow-x: hidden;
+    width: 100%;
+    min-height: 100%
 }
 
 body {
     background: #f0f0f0;
-    font-size:0.8rem;
-    -webkit-font-smoothing: antialiased;
-    font-family:"微软雅黑","microsoft yahei";
+    font-size: .8rem;
+    font-family: 微软雅黑,microsoft yahei;
+    -webkit-font-smoothing: antialiased
 }
 
-a{
+a {
     outline: 0;
-    text-decoration: none;
+    text-decoration: none
 }
 
-button, input, textarea {
+button,input,textarea {
+    outline: 0;
     -webkit-appearance: none;
-    outline: 0;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent
 }
 
-.show{
-    display: block;
-}
-.hide{
-    display: none;
-}
-.pointer{
-    cursor: pointer;
+.show {
+    display: block
 }
 
-#header{
+.hide {
+    display: none
+}
+
+.pointer {
+    cursor: pointer
+}
+
+#header {
+    margin: 0 auto;
     min-height: 2.625rem;
-    margin: 0 auto;
-    background: #ffffff;
-    box-shadow: 0 -2px 3px rgba(26,26,26,.1) inset;
+    background: #fff;
+    box-shadow: 0 -2px 3px rgba(26,26,26,.1) inset
 }
 
-.yu-header{
-    color: #000000;
-    width: 1080px;
+.yu-header {
+    margin: 0 auto;
+    width: 810pt;
     max-width: 100%;
-    margin: 0 auto;
+    color: #000
 }
-.yu-header-m{
-    display: none;
+
+.yu-header-m {
+    display: none
 }
-.yu-header-main{
-    zoom: 1;
-    width: 1080px;
+
+.yu-header-main {
+    position: relative;
     margin: 0 auto;
+    width: 810pt;
     max-width: 100%;
     max-height: 100%;
-    position: relative;
+    zoom: 1
 }
 
-.yu-title{
-    line-height: 2.625rem;
+.yu-title {
+    position: relative;
     float: left;
-    height: 100%;
     margin: 0 20px;
-    position: relative;
-}
-.yu-title a{
-    color: #000;
-    font-size: 1.375rem;
+    height: 100%;
+    line-height: 2.625rem
 }
 
-.yu-menu-main{
-    display: inline-block;
+.yu-title a {
+    color: #000;
+    font-size: 1.375rem
 }
-.yu-menu-main ul{
-    list-style: none;
+
+.yu-menu-main {
+    display: inline-block
+}
+
+.yu-menu-main ul {
     z-index: 1;
+    list-style: none
 }
-.yu-menu-main ul li{
+
+.yu-menu-main ul li {
+    position: relative;
     float: left;
-    text-align: center;
-    line-height: 2.625rem;
     height: 2.625rem;
     background-color: hsla(0,0%,100%,0);
-    -webkit-transition: all .3s;
-    transition: all .3s;
-    position: relative;
+    text-align: center;
+    line-height: 2.625rem;
+    transition: all .3s
 }
 
-.yu-menu-main ul li a{
-    color: #222;
-    height: 100%;
+.yu-menu-main ul li a {
     display: block;
     padding: 0 11px;
-    cursor: pointer;
+    height: 100%;
+    color: #222;
+    cursor: pointer
 }
 
-.yu-search{
+.yu-search {
     position: relative;
     float: right;
     margin-right: 10px;
-    line-height: 2.625rem;
-    cursor: pointer;
     font-size: 1.3rem;
+    line-height: 2.625rem;
+    cursor: pointer
 }
-.yu-shadow{
-    z-index: 9999;
-    background-color: #000;
-    opacity: .3;
+
+.yu-shadow {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 9999;
     width: 100%;
     height: 100%;
+    background-color: #000;
+    opacity: .3
 }
-.yu-pop-search{
-    padding: 20px 0 16px;
-    border-bottom: 1px solid #e7e7e7;
-    text-align: center;
-    background: #fff;
-    cursor: default;
-    z-index: 10000;
+
+.yu-pop-search {
     position: fixed;
-    width: 300px;
-    left: 50%;
     top: 50%;
-    margin-left: -150px;
+    left: 50%;
+    z-index: 10000;
     margin-top: -50px;
-    -webkit-box-shadow: rgba(0,0,0,.2) 0 0 5px 0;
-    box-shadow: rgba(0,0,0,.2) 0 0 5px 0;
+    margin-left: -150px;
+    padding: 20px 0 1pc;
+    width: 300px;
+    border-bottom: 1px solid #e7e7e7;
     border-radius: 4px;
-    animation:fade-animation 0.5s ease;
+    background: #fff;
+    box-shadow: rgba(0,0,0,.2) 0 0 5px 0;
+    text-align: center;
+    cursor: default;
+    animation: fade-animation .5s ease
 }
 
-.yu-pop-search.hide{
-    animation:hide-animation 1.5s ease;
+.yu-pop-search.hide {
+    animation: hide-animation 1.5s ease
 }
 
-
-.yu-search-head{
-    text-align: left;
+.yu-search-head {
     padding: 0 18px;
-    font-weight: bold;
+    text-align: left;
+    font-weight: 700
 }
-.yu-search-head .pointer{
-    float: right;
+
+.yu-search-head .pointer {
+    float: right
 }
-.keyword{
+
+.keyword {
     display: block;
-    height: 30px;
-    line-height: 30px;
-    font-size: 14px;
-    width: 264px;
     margin: 5px 18px;
+    width: 264px;
+    height: 30px;
     border-bottom: 1px solid #e5e9ef;
+    font-size: 14px;
+    line-height: 30px
 }
 
-
-@media only screen and (max-width: 900px) {
-    div, a, img {
+@media only screen and (max-width:900px) {
+    a,div,img {
         -webkit-tap-highlight-color: transparent;
         -webkit-touch-callout: none;
         -webkit-user-select: none;
         -moz-user-select: none;
         -ms-user-select: none;
-        user-select: none;
+        user-select: none
     }
-    .yu-header{
-        display: none;
+
+    .yu-header {
+        display: none
     }
-    .yu-header-m{
-        max-width: 100%;
+
+    .yu-header-m {
         display: block;
+        max-width: 100%
     }
-    .yu-header-main{
+
+    .yu-header-main {
         text-align: center;
-        -webkit-transition: all .3s;
+        -webkit-transition: all .5s
     }
-    .yu-menu-slide{
-        line-height: 2.625rem;
-        float: left;
-        height: 100%;
-        margin: 0 20px;
+
+    .yu-menu-slide {
         position: absolute;
-        top: 0px;
-        left: 0px;
-        font-size: 1.2rem;
-        cursor: pointer;
+        top: 0;
+        left: 0;
         z-index: 10;
+        float: left;
+        margin: 0 20px;
+        font-size: 1.2rem;
+        cursor: pointer
     }
-    .yu-title{
-        line-height: 2.625rem;
+
+    .yu-menu-slide,.yu-title {
         height: 100%;
-        margin: 0 auto;
-        float: none;
-        position: relative;
+        line-height: 2.625rem
     }
-    .yu-search{
+
+    .yu-title {
+        position: relative;
+        float: none;
+        margin: 0 auto
+    }
+
+    .yu-search {
         position: absolute;
-        top: 0px;
-        right: 0px;
+        top: 0;
+        right: 0;
         float: right;
         margin-right: 1rem;
-        line-height: 2.625rem;
-        cursor: pointer;
         font-size: 1.3rem;
+        line-height: 2.625rem;
+        cursor: pointer
     }
-    .yu-slide{
-        background-image: url(../img/slidebg.jpg);
-        background-position: center top;
-        background-repeat: no-repeat;
-        background-attachment: scroll;
-        background-size: cover;
 
-        display: block;
+    .yu-slide {
         position: fixed;
         top: 0;
         left: -250px;
-        width: 250px;
-        height: 100%;
         z-index: 997;
+        display: block;
         overflow: hidden;
         padding: 5rem 2rem 2rem 1rem;
+        width: 250px;
+        height: 100%;
+        background-image: url(../img/slidebg.jpg);
+        background-position: center top;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
         text-align: center;
-        -webkit-transition: all .5s;
+        -webkit-transition: all .5s
     }
 
-    .yu-slide.show , .yu-header-main.show{
-        -webkit-transform: translate3D(250px,0,0);
-        transform: translate3D(250px,0,0);
+    .yu-header-main.show,.yu-slide.show {
+        box-shadow: 1px 0 1px #fff inset;
         -webkit-transition: all .5s;
-        box-shadow: 1px 0px 1px #ffffff inset;
-    }
-    .yu-menu-main{
-        margin-top: 2rem;
+        transform: translate3D(250px,0,0)
     }
 
-    .yu-menu-main ul li{
+    .yu-menu-main {
+        margin-top: 2rem
+    }
+
+    .yu-menu-main ul li {
+        position: relative;
         float: none;
-        text-align: left;
-        line-height: 2.625rem;
         height: 2.625rem;
         background-color: hsla(0,0%,100%,0);
-        -webkit-transition: all .3s;
-        transition: all .3s;
-        position: relative;
+        text-align: left;
+        line-height: 2.625rem;
+        transition: all .3s
     }
-    .yu-slide h1{
-        color: #ffffff;
+
+    .yu-slide h2 {
+        color: #fff
     }
-    .yu-menu-main ul li a{
-        color: #ffffff;
-        font-size: 1rem;
-        font-weight:600;
+
+    .yu-menu-main ul li a {
+        color: #fff;
+        font-weight: normal;
+        font-size: 1rem
     }
 
     .yu-slide-shadow {
         position: absolute;
+        top: 0;
+        left: 2px;
         z-index: -1;
         width: 100%;
         height: 100%;
-        filter: alpha(opacity=50);
+        background-color: #000;
+        opacity: .5;
         -moz-opacity: .5;
         -khtml-opacity: .5;
-        opacity: .5;
-        -webkit-filter: blur(2px);
         -moz-filter: blur(2px);
         -ms-filter: blur(2px);
-        filter: blur(2px);
-        background-color: #000;
-        top: 0;
-        left: 2px;
+        filter: blur(2px)
+    }
+
+    .avatar{
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 3px solid #fff;
     }
 }
 
-@keyframes fade-animation{
-    0%{opacity: 0;}
-    50%{opacity: 0.5;}
-    100%{opacity: 1;}
+@keyframes fade-animation {
+    0% {
+        opacity: 0
+    }
+
+    50% {
+        opacity: .5
+    }
+
+    to {
+        opacity: 1
+    }
 }
-@keyframes hide-animation{
-    100%{opacity: 1;}
-    50%{opacity: 0.5;}
-    0%{opacity: 0;}
+
+@keyframes hide-animation {
+    to {
+        opacity: 1
+    }
+
+    50% {
+        opacity: .5
+    }
+
+    0% {
+        opacity: 0
+    }
 }
