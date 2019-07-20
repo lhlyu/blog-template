@@ -2,38 +2,41 @@ $(function(){
 
     $(document).on('click',".yu-menu-btn",function(){
         var hasShow = $(".yu-header-m-slide").hasClass("show");
-        console.log(hasShow)
         if(hasShow){
             $(".yu-header-m-slide").removeClass("show");
             $(".yu-header-m-main").removeClass("show");
+            $(".yu-menu-btn i").removeClass("icon-menuoff");
+            $(".yu-menu-btn i").addClass("icon-menuon");
         }else{
             $(".yu-header-m-slide").addClass("show");
             $(".yu-header-m-main").addClass("show");
+            $(".yu-menu-btn i").removeClass("icon-menuon");
+            $(".yu-menu-btn i").addClass("icon-menuoff");
         }
     });
 
     $(document).on('click',".yu-search",function(){
-        var hasHide = $(".yu-pop-search").hasClass("hide");
+        var hasHide = $(".yu-modal-search").hasClass("hide");
         if(hasHide){
-            $(".yu-pop-search").removeClass("hide");
+            $(".yu-modal-search").removeClass("hide");
             $(".yu-shadow").removeClass("hide");
         }
     });
 
     $(document).on('click',".yu-modal-search-close",function(){
-        var hasHide = $(".yu-pop-search").hasClass("hide");
+        var hasHide = $(".yu-modal-search").hasClass("hide");
         if(!hasHide){
-            $(".yu-pop-search").addClass("hide");
+            $(".yu-modal-search").addClass("hide");
             $(".yu-shadow").addClass("hide");
         }
     });
 
     $(document).on('click',".yu-shadow",function(){
-        $(".yu-search-close").click()
+        $(".yu-modal-search-close").click()
     });
 
     $(document).keypress(function(e) {
-        var hasHide = $(".yu-pop-search").hasClass("hide");
+        var hasHide = $(".yu-modal-search").hasClass("hide");
         if(!hasHide){
             // 回车键事件
             if(e.which == 13) {

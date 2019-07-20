@@ -1,136 +1,65 @@
-*,body,html {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    background: 0 0;
-    word-wrap: break-word
-}
+/* 正常屏幕 > 900px  */
 
-body,html {
-    overflow-x: hidden;
-    width: 100%;
-    min-height: 100%
-}
-
-body {
-    background: #f0f0f0;
-    font-size: .8rem;
-    font-family: 微软雅黑,microsoft yahei;
-    -webkit-font-smoothing: antialiased
-}
-
-a {
-    outline: 0;
-    text-decoration: none
-}
-
-button,input,textarea {
-    outline: 0;
-    -webkit-appearance: none;
-    -webkit-tap-highlight-color: transparent
-}
-
-.show {
-    display: block
-}
-
-.hide {
-    display: none
-}
-
-.pointer {
-    cursor: pointer
-}
-
+/* header */
 header {
     margin: 0 auto;
     min-height: 2.625rem;
     background: #fff;
-    box-shadow: 0 -2px 3px rgba(26,26,26,.1) inset
+    box-shadow: 0 -2px 3px rgba(26,26,26,.1) inset;
 }
 
-.yu-header {
+.yu-header-pc {
     margin: 0 auto;
-    width: 810pt;
+    width: 1080px;
     max-width: 100%;
-    color: #000
+    color: #000;
 }
 
 .yu-header-m {
-    display: none
+    display: none;
 }
 
-.yu-header-main {
-    position: relative;
-    margin: 0 auto;
-    width: 810pt;
-    max-width: 100%;
-    max-height: 100%;
-    zoom: 1
-}
-
-.yu-title {
-    position: relative;
+.yu-header-pc-title {
     float: left;
     margin: 0 20px;
-    height: 100%;
-    line-height: 2.625rem
+    line-height: 2.625rem;
 }
 
-.yu-title a {
+.yu-header-pc-title a {
     color: #000;
-    font-size: 1.375rem
+    font-size: 1.375rem;
 }
 
-.yu-menu-main {
-    display: inline-block
+.yu-header-pc-menu {
+    display: inline-block;
 }
 
-.yu-menu-main ul {
-    z-index: 1;
-    list-style: none
+.yu-header-pc-menu ul {
+    list-style: none;
 }
 
-.yu-menu-main ul li {
-    position: relative;
+.yu-header-pc-menu ul li {
     float: left;
-    height: 2.625rem;
-    background-color: hsla(0,0%,100%,0);
     text-align: center;
     line-height: 2.625rem;
-    transition: all .3s
 }
 
-.yu-menu-main ul li a {
-    display: block;
+.yu-header-pc-menu ul li a {
     padding: 0 11px;
-    height: 100%;
     color: #222;
-    cursor: pointer
+    cursor: pointer;
 }
 
-.yu-search {
+.yu-header-pc-search {
     position: relative;
     float: right;
-    margin-right: 10px;
+    margin-right: 1rem;
     font-size: 1.3rem;
     line-height: 2.625rem;
-    cursor: pointer
+    cursor: pointer;
 }
 
-.yu-shadow {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9999;
-    width: 100%;
-    height: 100%;
-    background-color: #000;
-    opacity: .3
-}
-
-.yu-pop-search {
+.yu-modal-search {
     top: 50%;
     left: 50%;
     width: 300px;
@@ -148,77 +77,66 @@ header {
     box-shadow: rgba(0,0,0,.2) 0 0 5px 0;
 }
 
-.yu-pop-search.hide {
-    animation: hide-animation 1.5s ease
+.yu-modal-search.hide {
+    animation: hide-animation 1.5s ease;
 }
 
-.yu-search-head {
+.yu-modal-search-head {
     padding: 0 18px;
     text-align: left;
-    font-weight: 700
+    font-weight: 700;
 }
 
-.yu-search-head .pointer {
-    float: right
+.yu-modal-search-close {
+    float: right;
 }
 
 .keyword {
-    display: block;
-    margin: 5px 18px;
-    width: 264px;
     height: 30px;
-    border-bottom: 1px solid #e5e9ef;
+    width: 264px;
+    display: block;
     font-size: 14px;
-    line-height: 30px
+    margin: 5px 18px;
+    line-height: 30px;
+    border-bottom: 1px solid #e5e9ef;
 }
+/* header */
+/** 正常屏幕 > 900px  **/
 
+/** 小屏幕 <= 900px  **/
+
+/* header */
 @media only screen and (max-width:900px) {
-    a,div,img {
-        -webkit-tap-highlight-color: transparent;
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none
-    }
 
-    .yu-header {
+    .yu-header-pc {
         display: none
     }
 
     .yu-header-m {
         display: block;
-        max-width: 100%
     }
 
-    .yu-header-main {
+    .yu-header-m-main {
+        margin: 0 auto;
         text-align: center;
-        -webkit-transition: all .5s
+        -webkit-transition: all .5s;
     }
 
-    .yu-menu-slide {
+    .yu-menu-btn {
         position: absolute;
-        top: 0;
         left: 0;
         z-index: 10;
-        float: left;
         margin: 0 20px;
-        font-size: 1.2rem;
-        cursor: pointer
+        cursor: pointer;
+        line-height: 2.625rem;
     }
-
-    .yu-menu-slide,.yu-title {
-        height: 100%;
+    .yu-header-m-title{
         line-height: 2.625rem
     }
-
-    .yu-title {
-        position: relative;
-        float: none;
-        margin: 0 auto
+    .yu-header-m-title a{
+        color: #000000;
     }
-
-    .yu-search {
+    .yu-header-m-search{
         position: absolute;
         top: 0;
         right: 0;
@@ -226,17 +144,15 @@ header {
         margin-right: 1rem;
         font-size: 1.3rem;
         line-height: 2.625rem;
-        cursor: pointer
+        cursor: pointer;
     }
-
-    .yu-slide {
+    .yu-header-m-slide{
         position: fixed;
         top: 0;
         left: -250px;
         z-index: 997;
-        display: block;
         overflow: hidden;
-        padding: 5rem 2rem 2rem 1rem;
+        padding: 2rem 2rem 2rem 2rem;
         width: 250px;
         height: 100%;
         background-image: url(../img/slidebg.jpg);
@@ -247,43 +163,48 @@ header {
         text-align: center;
         -webkit-transition: all .5s
     }
-
-    .yu-header-main.show,.yu-slide.show {
+    .yu-header-m-main.show,.yu-header-m-slide.show{
         box-shadow: 1px 0 1px #fff inset;
         -webkit-transition: all .5s;
         transform: translate3D(250px,0,0)
     }
 
-    .yu-menu-main {
-        margin-top: 2rem
+    .yu-header-m-slide h2 {
+        color: #fff
     }
 
-    .yu-menu-main ul li {
-        position: relative;
-        float: none;
+    .yu-header-m-menu {
+    }
+
+    .yu-header-m-menu ul{
+        margin-top: 1rem;
+        display: inline-block;
+        z-index: 1;
+        list-style: none;
+    }
+
+    .yu-header-m-menu ul li {
         height: 2.625rem;
-        background-color: hsla(0,0%,100%,0);
         text-align: left;
         line-height: 2.625rem;
         transition: all .3s
     }
 
-    .yu-slide h2 {
-        color: #fff
-    }
-
-    .yu-menu-main ul li a {
+    .yu-header-m-menu ul li a {
+        display: block;
+        padding: 0 11px;
+        height: 100%;
         color: #fff;
         font-weight: normal;
         font-size: 1rem
     }
 
-    .yu-menu-main ul li a.active{
+    .yu-header-m-menu ul li a.active{
         color: #f0ad4e;
         font-weight: normal;
     }
 
-    .yu-slide-shadow {
+    .yu-header-m-slide-shadow {
         position: absolute;
         top: 0;
         left: 2px;
@@ -291,9 +212,9 @@ header {
         width: 100%;
         height: 100%;
         background-color: #000;
-        opacity: .7;
-        -moz-opacity: .7;
-        -khtml-opacity: .7;
+        opacity: .65;
+        -moz-opacity: .65;
+        -khtml-opacity: .65;
         -moz-filter: blur(2px);
         -ms-filter: blur(2px);
         filter: blur(2px)
@@ -306,7 +227,23 @@ header {
         border: 3px solid #fff;
     }
 }
+/* header */
+/** 小屏幕 <= 900px  **/
 
+/** 其他 **/
+.yu-shadow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: .3
+}
+/** 其他 **/
+
+/** 动画 **/
 @keyframes fade-animation {
     0% {
         opacity: 0
@@ -334,3 +271,4 @@ header {
         opacity: 0
     }
 }
+/** 动画 **/

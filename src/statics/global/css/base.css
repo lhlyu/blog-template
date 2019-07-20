@@ -53,14 +53,3 @@ a,div,img {
 .pointer {
     cursor: pointer;
 }
-
-.yu-shadow {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9999;
-    width: 100%;
-    height: 100%;
-    background-color: #000;
-    opacity: .3
-}
