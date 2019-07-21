@@ -5,11 +5,13 @@ $(function(){
         if(hasShow){
             $(".yu-header-m-slide").removeClass("show");
             $(".yu-header-m-main").removeClass("show");
+            $(".yu-main").removeClass("show");
             $(".yu-menu-btn i").removeClass("icon-menuoff");
             $(".yu-menu-btn i").addClass("icon-menuon");
         }else{
             $(".yu-header-m-slide").addClass("show");
             $(".yu-header-m-main").addClass("show");
+            $(".yu-main").addClass("show");
             $(".yu-menu-btn i").removeClass("icon-menuon");
             $(".yu-menu-btn i").addClass("icon-menuoff");
         }
