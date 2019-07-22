@@ -163,6 +163,16 @@ header {
     font-weight: bold;
     padding: 0.1rem;
 }
+.yu-interval{
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #a5a5a5;
+    display: block;
+    float: right;
+    line-height: 1.8rem;
+    padding: 0.1rem;
+    margin-right: 0.8rem;
+}
 .yu-card-title:hover{
     color: #1d9ce5;
 }

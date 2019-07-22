@@ -4,30 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Article</title>
+    <title>Template</title>
     <link rel="shortcut icon" href="favicon.ico"/>
 
     <link rel="stylesheet" type="text/css" href="./statics/global/css/iconfont.css">
     <link rel="stylesheet" type="text/css" href="./statics/global/css/base.css">
     <link rel="stylesheet" type="text/css" href="./statics/local/css/index.css">
-    <link rel="stylesheet" type="text/css" href="./statics/local/css/article.css">
-
-    <link rel="stylesheet" type="text/css" href="./statics/third-party/editor.md/editormd.preview.min.css">
-    <link rel="stylesheet" type="text/css" href="./statics/third-party/owo/OwO.min.css">
 
     <script src="./statics/third-party/jquery/jquery.min.js"></script>
-    <script src="./statics/third-party/editor.md/marked.min.js"></script>
-    <script src="./statics/third-party/editor.md/prettify.min.js"></script>
-    <script src="./statics/third-party/editor.md/raphael.min.js"></script>
-    <script src="./statics/third-party/editor.md/underscore.min.js"></script>
-    <script src="./statics/third-party/editor.md/sequence-diagram.min.js"></script>
-    <script src="./statics/third-party/editor.md/flowchart.min.js"></script>
-    <script src="./statics/third-party/editor.md/jquery.flowchart.min.js"></script>
-    <script src="./statics/third-party/editor.md/editormd.min.js"></script>
-    <script src="./statics/third-party/owo/OwO.min.js"></script>
-    <script src="./statics/global/js/base.js"></script>
     <script src="./statics/local/js/index.js"></script>
-    <script src="./statics/local/js/article.js"></script>
 
 </head>
 <body>
@@ -51,7 +36,7 @@
                         <a href="#"><i class="iconfont icon-link"></i> 友情链接</a>
                     </li>
                     <li>
-                        <a href="future.html"><i class="iconfont icon-windmill-fill"></i> 关于我</a>
+                        <a href="#"><i class="iconfont icon-windmill-fill"></i> 关于我</a>
                     </li>
                 </ul>
             </div>
@@ -87,7 +72,7 @@
                         <a href="#"><i class="iconfont icon-link"></i> 友情链接</a>
                     </li>
                     <li>
-                        <a href="future.html"><i class="iconfont icon-windmill"></i> 关于我</a>
+                        <a href="#"><i class="iconfont icon-windmill"></i> 关于我</a>
                     </li>
                 </ul>
             </div>
@@ -104,105 +89,6 @@
     <!-- main left -->
     <div class="yu-main-left">
         <div class="yu-card">
-            <div class="yu-card-bg">
-                <canvas class="yu-canvas"></canvas>
-            </div>
-            <div class="yu-card-content yu-article">
-                <div class="yu-card-title yu-article-title">
-                    博客标题
-                </div>
-                <div class="yu-card-label yu-article-label">
-                    <span class="yu-label">干货</span>
-                    <span class="yu-label">没用的</span>
-                    <span class="yu-label">标签</span>
-                </div>
-                <div class="yu-card-nr" id="yu-article-content">
-                     <textarea  id="append-test" style="display:none;">
-## hello-world
-
-
-- main.go
-
-```
-package main
-
-import (
-"github.com/kataras/iris"
-"github.com/kataras/iris/mvc"
-
-"github.com/kataras/iris/middleware/logger"
-"github.com/kataras/iris/middleware/recover"
-)
-
-func newApp() *iris.Application {
-app := iris.New()
-app.Use(recover.New())
-app.Use(logger.New())
-
-mvc.New(app).Handle(new(ExampleController))
-return app
-}
-
-func main() {
-app := newApp()
-
-app.Run(iris.Addr(":8080"))
-}
-
-type ExampleController struct{}
-
-func (c *ExampleController) Get() mvc.Result {
-return mvc.Response{
-    ContentType: "text/html",
-    Text:        "<h1>Welcome</h1>",
-}
-}
-
-func (c *ExampleController) GetPing() string {
-return "pong"
-}
-
-func (c *ExampleController) GetHello() interface{} {
-return map[string]string{"message": "Hello Iris!"}
-}
-
-func (c *ExampleController) BeforeActivation(b mvc.BeforeActivation) {
-anyMiddlewareHere := func(ctx iris.Context) {
-    ctx.Application().Logger().Warnf("Inside /custom_path")
-    ctx.Next()
-}
-b.Handle("GET", "/custom_path", "CustomHandlerWithoutFollowingTheNamingGuide", anyMiddlewareHere)
-}
-
-func (c *ExampleController) CustomHandlerWithoutFollowingTheNamingGuide() string {
-return "hello from the custom handler without following the naming guide"
-}
-
-
-```
-                     </textarea>
-                </div>
-            </div>
-            <div class="yu-card-footer">
-                <div class="yu-card-basic">
-                    <i class="iconfont icon-view"></i> 2019-07-22 10:00:00
-                </div>
-                <div class="yu-card-basic">
-                    <i class="iconfont icon-view"></i> 点赞
-                </div>
-                <div class="yu-card-basic">
-                    <i class="iconfont icon-view"></i> 分享
-                </div>
-            </div>
-        </div>
-
-        <div class="yu-card hide">
-            <div class="yu-editor">
-                <div class="container">
-                    <div class="OwO"></div>
-                    <textarea class="OwO-textarea" style="min-width: 100%; height: 50px; margin-bottom: 10px; padding: 10px; border: 1px solid #b5b5b5"></textarea>
-                </div>
-            </div>
         </div>
     </div>
     <!-- main left -->
