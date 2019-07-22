@@ -39,6 +39,10 @@ $(function(){
         $(".yu-modal-search-close").click()
     });
 
+    $(document).on('click',".icon-more",function(){
+        window.location.href = "./article.html"
+    });
+
     $(document).keypress(function(e) {
         var hasHide = $(".yu-modal-search").hasClass("hide");
         if(!hasHide){
@@ -55,7 +59,6 @@ $(function(){
     });
 
     $(window).scroll(function(e){
-        console.log($(window).scrollTop())
         if($(window).scrollTop() >= 300){
             $('.yu-gotop').removeClass("hide")
         }else{

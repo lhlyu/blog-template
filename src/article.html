@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Article</title>
+
+    <link rel="stylesheet" type="text/css" href="./statics/global/css/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="./statics/global/css/base.css">
+    <link rel="stylesheet" type="text/css" href="./statics/local/css/index.css">
+    <link rel="stylesheet" type="text/css" href="./statics/local/css/article.css">
+
+    <link rel="stylesheet" type="text/css" href="./statics/third-party/editor.md/editormd.preview.min.css">
+
+    <script src="./statics/third-party/jquery/jquery.min.js"></script>
+    <script src="./statics/third-party/editor.md/marked.min.js"></script>
+    <script src="./statics/third-party/editor.md/prettify.min.js"></script>
+    <script src="./statics/third-party/editor.md/raphael.min.js"></script>
+    <script src="./statics/third-party/editor.md/underscore.min.js"></script>
+    <script src="./statics/third-party/editor.md/sequence-diagram.min.js"></script>
+    <script src="./statics/third-party/editor.md/flowchart.min.js"></script>
+    <script src="./statics/third-party/editor.md/jquery.flowchart.min.js"></script>
+    <script src="./statics/third-party/editor.md/editormd.min.js"></script>
+    <script src="./statics/local/js/index.js"></script>
+
+</head>
+<body>
+<!-- header -->
+<header>
+    <!-- big screen header -->
+    <div class="yu-header-pc">
+        <div class="yu-header-pc-main">
+
+            <h1 class="yu-header-pc-title"><a href="#">Lhlyu</a></h1>
+            <span> </span>
+            <div class="yu-header-pc-menu">
+                <ul>
+                    <li>
+                        <a href="index.html"><i class="iconfont icon-home1"></i> 首页</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="iconfont icon-archive"></i> 归档</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="iconfont icon-link"></i> 友情链接</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="iconfont icon-windmill-fill"></i> 关于我</a>
+                    </li>
+                </ul>
+            </div>
+            <span class="yu-search yu-header-pc-search iconfont icon-search"></span>
+
+        </div>
+    </div>
+    <!-- big screen header -->
+
+    <!-- small screen header -->
+    <div class="yu-header-m">
+        <div class="yu-header-m-main">
+            <span class="yu-menu-btn">
+                <i class="pointer iconfont icon-menuon"></i>
+            </span>
+            <span> </span>
+            <h1 class="yu-header-m-title"><a href="index.html">Lhlyu</a></h1>
+            <span> </span>
+            <span class="yu-search yu-header-m-search iconfont icon-search"></span>
+        </div>
+        <div class="yu-header-m-slide">
+            <img src="./statics/local/img/tx.jpg" class="avatar" alt="lhlyu">
+            <h2>Lhlyu</h2>
+            <div class="yu-header-m-menu">
+                <ul>
+                    <li>
+                        <a class="active" href="index.html"><i class="iconfont icon-home"></i> 首页</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="iconfont icon-archive1"></i> 归档</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="iconfont icon-link"></i> 友情链接</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="iconfont icon-windmill"></i> 关于我</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="yu-header-m-slide-shadow"></div>
+        </div>
+    </div>
+    <!-- small screen header -->
+</header>
+<!-- header -->
+
+<!-- main -->
+<div class="yu-main">
+
+    <!-- main left -->
+    <div class="yu-main-left">
+        <div class="yu-card-list">
+            <div class="yu-card">
+                <div class="yu-card-bg"></div>
+                <div class="yu-card-content">
+                    <div class="yu-card-title yu-article-title">
+                        博客标题
+                    </div>
+                    <div class="yu-card-label yu-article-label">
+                        <span class="yu-label">干货</span>
+                        <span class="yu-label">没用的</span>
+                        <span class="yu-label">标签</span>
+                    </div>
+                    <div class="yu-card-nr" id="yu-article-content">
+                         <textarea  id="append-test" style="display:none;">
+## hello-world
+
+
+- main.go
+
+```
+package main
+
+import (
+	"github.com/kataras/iris"
+	"github.com/kataras/iris/mvc"
+
+	"github.com/kataras/iris/middleware/logger"
+	"github.com/kataras/iris/middleware/recover"
+)
+
+// This example is equivalent to the
+// https://github.com/kataras/iris/blob/master/_examples/hello-world/main.go
+//
+// It seems that additional code you
+// have to write doesn't worth it
+// but remember that, this example
+// does not make use of iris mvc features like
+// the Model, Persistence or the View engine neither the Session,
+// it's very simple for learning purposes,
+// probably you'll never use such
+// as simple controller anywhere in your app.
+//
+// The cost we have on this example for using MVC
+// on the "/hello" path which serves JSON
+// is ~2MB per 20MB throughput on my personal laptop,
+// it's tolerated for the majority of the applications
+// but you can choose
+// what suits you best with Iris, low-level handlers: performance
+// or high-level controllers: easier to maintain and smaller codebase on large applications.
+
+// Of course you can put all these to main func, it's just a separate function
+// for the main_test.go.
+func newApp() *iris.Application {
+	app := iris.New()
+	// Optionally, add two built'n handlers
+	// that can recover from any http-relative panics
+	// and log the requests to the terminal.
+	app.Use(recover.New())
+	app.Use(logger.New())
+
+	// Serve a controller based on the root Router, "/".
+	mvc.New(app).Handle(new(ExampleController))
+	return app
+}
+
+func main() {
+	app := newApp()
+
+	// http://localhost:8080
+	// http://localhost:8080/ping
+	// http://localhost:8080/hello
+	// http://localhost:8080/custom_path
+	app.Run(iris.Addr(":8080"))
+}
+
+// ExampleController serves the "/", "/ping" and "/hello".
+type ExampleController struct{}
+
+// Get serves
+// Method:   GET
+// Resource: http://localhost:8080
+func (c *ExampleController) Get() mvc.Result {
+	return mvc.Response{
+		ContentType: "text/html",
+		Text:        "<h1>Welcome</h1>",
+	}
+}
+
+// GetPing serves
+// Method:   GET
+// Resource: http://localhost:8080/ping
+func (c *ExampleController) GetPing() string {
+	return "pong"
+}
+
+// GetHello serves
+// Method:   GET
+// Resource: http://localhost:8080/hello
+func (c *ExampleController) GetHello() interface{} {
+	return map[string]string{"message": "Hello Iris!"}
+}
+
+// BeforeActivation called once, before the controller adapted to the main application
+// and of course before the server ran.
+// After version 9 you can also add custom routes for a specific controller's methods.
+// Here you can register custom method's handlers
+// use the standard router with `ca.Router` to do something that you can do without mvc as well,
+// and add dependencies that will be binded to a controller's fields or method function's input arguments.
+func (c *ExampleController) BeforeActivation(b mvc.BeforeActivation) {
+	anyMiddlewareHere := func(ctx iris.Context) {
+		ctx.Application().Logger().Warnf("Inside /custom_path")
+		ctx.Next()
+	}
+	b.Handle("GET", "/custom_path", "CustomHandlerWithoutFollowingTheNamingGuide", anyMiddlewareHere)
+
+	// or even add a global middleware based on this controller's router,
+	// which in this example is the root "/":
+	// b.Router().Use(myMiddleware)
+}
+
+// CustomHandlerWithoutFollowingTheNamingGuide serves
+// Method:   GET
+// Resource: http://localhost:8080/custom_path
+func (c *ExampleController) CustomHandlerWithoutFollowingTheNamingGuide() string {
+	return "hello from the custom handler without following the naming guide"
+}
+
+// GetUserBy serves
+// Method:   GET
+// Resource: http://localhost:8080/user/{username:string}
+// By is a reserved "keyword" to tell the framework that you're going to
+// bind path parameters in the function's input arguments, and it also
+// helps to have "Get" and "GetBy" in the same controller.
+//
+// func (c *ExampleController) GetUserBy(username string) mvc.Result {
+// 	return mvc.View{
+// 		Name: "user/username.html",
+// 		Data: username,
+// 	}
+// }
+
+/* Can use more than one, the factory will make sure
+that the correct http methods are being registered for each route
+for this controller, uncomment these if you want:
+
+func (c *ExampleController) Post() {}
+func (c *ExampleController) Put() {}
+func (c *ExampleController) Delete() {}
+func (c *ExampleController) Connect() {}
+func (c *ExampleController) Head() {}
+func (c *ExampleController) Patch() {}
+func (c *ExampleController) Options() {}
+func (c *ExampleController) Trace() {}
+*/
+
+/*
+func (c *ExampleController) All() {}
+//        OR
+func (c *ExampleController) Any() {}
+
+
+
+func (c *ExampleController) BeforeActivation(b mvc.BeforeActivation) {
+	// 1 -> the HTTP Method
+	// 2 -> the route's path
+	// 3 -> this controller's method name that should be handler for that route.
+	b.Handle("GET", "/mypath/{param}", "DoIt", optionalMiddlewareHere...)
+}
+
+// After activation, all dependencies are set-ed - so read only access on them
+// but still possible to add custom controller or simple standard handlers.
+func (c *ExampleController) AfterActivation(a mvc.AfterActivation) {}
+
+*/
+
+```
+
+- main_test.go
+
+```
+package main
+
+import (
+	"testing"
+
+	"github.com/kataras/iris/httptest"
+)
+
+func TestMVCHelloWorld(t *testing.T) {
+	e := httptest.New(t, newApp())
+
+	e.GET("/").Expect().Status(httptest.StatusOK).
+		ContentType("text/html", "utf-8").Body().Equal("<h1>Welcome</h1>")
+
+	e.GET("/ping").Expect().Status(httptest.StatusOK).
+		Body().Equal("pong")
+
+	e.GET("/hello").Expect().Status(httptest.StatusOK).
+		JSON().Object().Value("message").Equal("Hello Iris!")
+
+	e.GET("/custom_path").Expect().Status(httptest.StatusOK).
+		Body().Equal("hello from the custom handler without following the naming guide")
+}
+
+```
+                         </textarea>
+                    </div>
+                </div>
+                <div class="yu-card-footer">
+                    <div class="yu-card-basic">
+                        <i class="iconfont icon-view"></i> 2019-07-22 10:00:00
+                    </div>
+                    <div class="yu-card-basic">
+                        <i class="iconfont icon-view"></i> 点赞
+                    </div>
+                    <div class="yu-card-basic">
+                        <i class="iconfont icon-view"></i> 分享
+                    </div>
+                </div>
+                <div class="yu-card-comment">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(function() {
+            testEditormdView2 = editormd.markdownToHTML("yu-article-content", {
+                htmlDecode      : "style,script,iframe",  // you can filter tags decode
+                emoji           : true,
+                taskList        : true,
+                tex             : true,  // 默认不解析
+                flowChart       : true,  // 默认不解析
+                sequenceDiagram : true,  // 默认不解析
+            });
+        })
+    </script>
+    <!-- main left -->
+
+    <!-- main right -->
+    <div class="yu-main-right">
+        <div class="yu-card">
+            <div class="yu-card-bg">
+                <img src="./statics/local/img/tx.jpg" class="yu-avatar" alt="lhlyu">
+            </div>
+            <div class="yu-card-content">
+                <div class="yu-profile">
+                    <div class="yu-bio">
+                        灰飞灰落 你也会倒下
+                    </div>
+                    <div class="yu-contact">
+                        <a href="https://github.com/lhlyu" target="_blank"><span class="iconfont icon-github"></span></a>
+                        <a href="https://gitee.com/lhlyu" target="_blank"><span class="iconfont icon-gitee"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="yu-card">
+            <div class="yu-card-content">
+                <div class="yu-piece-title">
+                    <span class="iconfont icon-article"> 最新文章</span>
+                </div>
+                <div class="yu-piece-content">
+                    <p class="yu-piece-article">
+                        最新文章最新文章最新文章最新文章最新文章最新文章最新文章最新文章
+                    </p>
+                    <p class="yu-piece-article">
+                        最新文章最新文章最新文章最新文章最新文章最新文章最新文章最新文章
+                    </p>
+                    <p class="yu-piece-article">
+                        最新文章最新文章最新文章最新文章最新文章最新文章最新文章最新文章
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="yu-card">
+            <div class="yu-card-content">
+                <div class="yu-piece-title">
+                    <span class="iconfont icon-label"> 标签</span>
+                </div>
+                <div class="yu-piece-content">
+                    <span class="yu-piece-label">干货</span>
+                    <span class="yu-piece-label">没用的</span>
+                    <span class="yu-piece-label">标签</span>
+                    <span class="yu-piece-label">干货</span>
+                    <span class="yu-piece-label">没用的</span>
+                    <span class="yu-piece-label">标签</span>
+                    <span class="yu-piece-label">干货</span>
+                    <span class="yu-piece-label">没用的</span>
+                    <span class="yu-piece-label">标签</span>
+                    <span class="yu-piece-label">干货</span>
+                    <span class="yu-piece-label">没用的</span>
+                    <span class="yu-piece-label">标签</span>
+                    <span class="yu-piece-label">干货</span>
+                    <span class="yu-piece-label">没用的</span>
+                    <span class="yu-piece-label">标签</span>
+                    <span class="yu-piece-label">干货</span>
+                    <span class="yu-piece-label">没用的</span>
+                    <span class="yu-piece-label">标签</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- main right -->
+</div>
+<!-- main -->
+
+<!-- footer -->
+<footer>
+    版权所有 © 2019 lhlyu
+</footer>
+<!-- footer -->
+
+<!-- hide -->
+<div>
+    <div class="yu-shadow hide"></div>
+    <div class="yu-modal-search hide">
+        <div class="yu-modal-search-head">
+            请输入你想搜索的内容：<i class="yu-modal-search-close pointer iconfont icon-close"></i>
+        </div>
+        <input class="keyword" placeholder="">
+    </div>
+</div>
+<!-- hide -->
+
+<!-- top -->
+<div class="yu-gotop hide">
+    <span class="iconfont icon-top"></span>
+</div>
+<!-- top -->
+
+</body>
+</html>
