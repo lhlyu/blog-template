@@ -195,15 +195,17 @@ header {
 .yu-card-footer{
     border-top: 1px solid #e5e5e5;
     height: 50px;
+    display: flex;
+    flex-direction: row;
+
 }
 .yu-card-basic{
-    min-width: calc(100% / 3 - 1px);
     border-left: 1px solid #e5e5e5;
     height: 100%;
-    float: left;
     text-align: center;
-    line-height: 4;
+    line-height: 3rem;
     cursor: pointer;
+    flex: 1;
 }
 .yu-card-basic:hover{
     color: #eb7350;

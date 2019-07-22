@@ -39,7 +39,7 @@ $(function(){
         $(".yu-modal-search-close").click()
     });
 
-    $(document).on('click',".icon-more",function(){
+    $(document).on('click',".yu-more",function(){
         window.location.href = "./article.html"
     });
 
