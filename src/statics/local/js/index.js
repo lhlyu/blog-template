@@ -60,7 +60,6 @@ $(function(){
 
     $("img").bind('error',function(){
         this.src = "./statics/local/img/tx.jpg"
-        this.onerror = null
     });
 
     $(window).scroll(function(e){
