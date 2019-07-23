@@ -108,7 +108,8 @@ header {
     width: 1080px;
     min-height: 89vh;
     max-width: 100%;
-    padding: 0.2rem 0.7rem 0;
+    /*padding: 0.2rem 0.7rem 0;*/
+    padding: 0;
     display: flex;
     justify-content: center;
     -webkit-transition: all .5s;
@@ -178,6 +179,9 @@ header {
 .yu-card-title:hover {
     color: #1d9ce5;
 }
+.yu-interval:hover {
+    color: #1d9ce5;
+}
 
 .yu-card-label {
     padding: 0.1rem;
@@ -205,8 +209,6 @@ header {
 }
 
 .yu-card-nr {
-    line-height: 1.5;
-    padding-bottom: 1rem;
 }
 
 .yu-card-footer {
@@ -368,9 +370,10 @@ header {
     text-align: center;
 }
 
-.yu-article-label {
+.yu-article-attr{
     text-align: center;
-    width: 100%;
+    color: #a5a5a5;
+    font-size: 0.8rem;
 }
 
 .yu-editor {
@@ -430,6 +433,7 @@ header {
     margin-bottom: 2px;
     cursor: pointer;
     background-color: #f5f5f5;
+    border-radius: 2px;
 }
 
 .yu-piece-label:hover {
@@ -442,6 +446,10 @@ header {
     text-overflow: ellipsis;
     white-space: nowrap;
     line-height: 1.5;
+}
+.yu-piece-article:hover {
+    color: #eb7350;
+    cursor: pointer;
 }
 
 .yu-piece-article:not(:last-child) {
@@ -533,11 +541,6 @@ footer {
     }
 
     .yu-header-m-main.show,.yu-header-m-slide.show,.yu-main.show,footer.show {
-        box-shadow: 1px 0 1px #fff inset;
-        opacity: 1;
-        /*-webkit-transition: all .5s;*/
-        transition-duration: 500ms;
-        transition-delay: 100ms;
         transform: translate3D(250px,0,0);
     }
 
@@ -653,6 +656,11 @@ footer {
 
 .yu-gotop:hover {
     color: #000000;
+}
+.yu-404{
+    font-size: 20rem;
+    width: 100%;
+    text-align: center;
 }
 /** 其他. **/
 
