@@ -58,6 +58,11 @@ $(function(){
         $('html,body').animate({scrollTop: 0}, 500);
     });
 
+    $("img").bind('error',function(){
+        this.src = "./statics/local/img/tx.jpg"
+        this.onerror = null
+    });
+
     $(window).scroll(function(e){
         if($(window).scrollTop() >= 300){
             $('.yu-gotop').removeClass("hide")

@@ -1,6 +1,6 @@
 $(function() {
 
-    // todo  判断canvas是否在可视区域
+    // todo  判断canvas是否在可视区域，暂时未用到
     function isInViewPortOfOne (el) {
         // viewPortHeight 兼容所有浏览器写法
         const viewPortHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
@@ -65,7 +65,7 @@ $(function() {
             particles[i].update();
             particles[i].draw();
         }
-        requestAnimationFrame(render);
+        window.requestAnimationFrame(render);
     }
 
     window.addEventListener('resize', resize);

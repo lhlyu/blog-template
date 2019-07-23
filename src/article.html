@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" type="text/css" href="./statics/global/css/iconfont.css">
     <link rel="stylesheet" type="text/css" href="./statics/global/css/base.css">
-    <link rel="stylesheet" type="text/css" href="./statics/local/css/index.css">
+    <link rel="stylesheet" type="text/css" href="./statics/local/css/style.css">
     <link rel="stylesheet" type="text/css" href="./statics/local/css/article.css">
 
     <link rel="stylesheet" type="text/css" href="./statics/third-party/editor.md/editormd.preview.min.css">
@@ -45,10 +45,7 @@
                         <a href="index.html"><i class="iconfont icon-home1"></i> 首页</a>
                     </li>
                     <li>
-                        <a href="#"><i class="iconfont icon-archive"></i> 归档</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="iconfont icon-link"></i> 友情链接</a>
+                        <a href="link.html"><i class="iconfont icon-link"></i> 链接</a>
                     </li>
                     <li>
                         <a href="future.html"><i class="iconfont icon-windmill-fill"></i> 关于我</a>
@@ -81,10 +78,7 @@
                         <a class="active" href="index.html"><i class="iconfont icon-home"></i> 首页</a>
                     </li>
                     <li>
-                        <a href="#"><i class="iconfont icon-archive1"></i> 归档</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="iconfont icon-link"></i> 友情链接</a>
+                        <a href="link.html"><i class="iconfont icon-link"></i> 链接</a>
                     </li>
                     <li>
                         <a href="future.html"><i class="iconfont icon-windmill"></i> 关于我</a>
@@ -118,7 +112,7 @@
                 </div>
                 <div class="yu-card-nr" id="yu-article-content">
                      <textarea  id="append-test" style="display:none;">
-## hello-world
+## yaag
 
 
 - main.go
@@ -127,71 +121,76 @@
 package main
 
 import (
-"github.com/kataras/iris"
-"github.com/kataras/iris/mvc"
+	"github.com/kataras/iris"
 
-"github.com/kataras/iris/middleware/logger"
-"github.com/kataras/iris/middleware/recover"
+	"github.com/betacraft/yaag/irisyaag"
+	"github.com/betacraft/yaag/yaag"
 )
 
-func newApp() *iris.Application {
-app := iris.New()
-app.Use(recover.New())
-app.Use(logger.New())
+/*
+	go get github.com/betacraft/yaag/...
+*/
 
-mvc.New(app).Handle(new(ExampleController))
-return app
+type myXML struct {
+	Result string `xml:"result"`
 }
 
 func main() {
-app := newApp()
+	app := iris.New()
 
-app.Run(iris.Addr(":8080"))
-}
+	yaag.Init(&yaag.Config{ // <- IMPORTANT, init the middleware.
+		On:       true,
+		DocTitle: "Iris",
+		DocPath:  "apidoc.html",
+		BaseUrls: map[string]string{"Production": "", "Staging": ""},
+	})
+	app.Use(irisyaag.New()) // <- IMPORTANT, register the middleware.
 
-type ExampleController struct{}
+	app.Get("/json", func(ctx iris.Context) {
+		ctx.JSON(iris.Map{"result": "Hello World!"})
+	})
 
-func (c *ExampleController) Get() mvc.Result {
-return mvc.Response{
-    ContentType: "text/html",
-    Text:        "<h1>Welcome</h1>",
-}
-}
+	app.Get("/plain", func(ctx iris.Context) {
+		ctx.Text("Hello World!")
+	})
 
-func (c *ExampleController) GetPing() string {
-return "pong"
-}
+	app.Get("/xml", func(ctx iris.Context) {
+		ctx.XML(myXML{Result: "Hello World!"})
+	})
 
-func (c *ExampleController) GetHello() interface{} {
-return map[string]string{"message": "Hello Iris!"}
-}
+	app.Get("/complex", func(ctx iris.Context) {
+		value := ctx.URLParam("key")
+		ctx.JSON(iris.Map{"value": value})
+	})
 
-func (c *ExampleController) BeforeActivation(b mvc.BeforeActivation) {
-anyMiddlewareHere := func(ctx iris.Context) {
-    ctx.Application().Logger().Warnf("Inside /custom_path")
-    ctx.Next()
+	// Run our HTTP Server.
+	//
+	// Documentation of "yaag" doesn't note the follow, but in Iris we are careful on what
+	// we provide to you.
+	//
+	// Each incoming request results on re-generation and update of the "apidoc.html" file.
+	// Recommentation:
+	// Write tests that calls those handlers, save the generated "apidoc.html".
+	// Turn off the yaag middleware when in production.
+	//
+	// Example usage:
+	// Visit all paths and open the generated "apidoc.html" file to see the API's automated docs.
+	app.Run(iris.Addr(":8080"))
 }
-b.Handle("GET", "/custom_path", "CustomHandlerWithoutFollowingTheNamingGuide", anyMiddlewareHere)
-}
-
-func (c *ExampleController) CustomHandlerWithoutFollowingTheNamingGuide() string {
-return "hello from the custom handler without following the naming guide"
-}
-
 
 ```
                      </textarea>
                 </div>
             </div>
             <div class="yu-card-footer">
+                <div class="yu-card-basic" disabled="disabled">
+                    <i class="iconfont icon-view"></i> 上一章
+                </div>
                 <div class="yu-card-basic">
                     <i class="iconfont icon-view"></i> 2019-07-22 10:00:00
                 </div>
-                <div class="yu-card-basic">
-                    <i class="iconfont icon-view"></i> 点赞
-                </div>
-                <div class="yu-card-basic">
-                    <i class="iconfont icon-view"></i> 分享
+                <div class="yu-card-basic" disabled="disabled">
+                    <i class="iconfont icon-view"></i> 下一章
                 </div>
             </div>
         </div>

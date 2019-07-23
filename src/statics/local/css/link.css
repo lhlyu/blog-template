@@ -1,0 +1,90 @@
+.yu-link-cards{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.yu-link-card{
+    border-radius: 4px;
+    background-color: #ffffff;
+    box-shadow: rgba(0,0,0,.2) 0 0 5px 0;
+    margin-bottom: 0.7rem;
+    animation: fade-animation 1s linear;
+    flex: 1;
+    padding: 0.25rem;
+    /*max-width: 150px;*/
+    height: 65px;
+    margin:0.25rem;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+.yu-link-class{
+    text-align: left;
+}
+.yu-link-class ul{
+    list-style: none;
+}
+.yu-link-class ul li {
+    float: left;
+    text-align: center;
+    line-height: 2.625rem;
+    padding: 0 5px;
+}
+.yu-link-class ul li a {
+    padding: 0 11px;
+    color: #222;
+    cursor: pointer;
+    border: 1px solid #e5e5e5;
+    border-radius: 2px;
+    background-color: #ffffff;
+}
+.yu-link-class ul li a:hover {
+    background-color: #eb7350;
+    color: #ffffff;
+    border: 1px solid #eb7350;
+}
+.yu-link-class ul li a.yu-link-selected {
+    background-color: #eb7350;
+    color: #ffffff;
+    border: 1px solid #eb7350;
+}
+.yu-link-left{
+    text-align: center;
+    padding: 13px;
+    flex:1;
+    border-radius: 50%;
+}
+.yu-link-right{
+    text-align: left;
+    flex:2;
+    display: flex;
+    flex-direction: column;
+}
+.yu-link-desc{
+    flex: 1;
+    padding:3px;
+}
+.yu-link-btn{
+    flex: 1;
+    min-width: 100px;
+}
+.yu-link-btn a{
+    display: block;
+    float: left;
+    border: 1px solid #e5e5e5;
+    padding: 0 3px;
+    border-radius: 3px;
+    color: #b5b5b5;
+}
+.yu-link-btn a:hover{
+    background-color: #eb7350;
+    color: #ffffff;
+}
+.yu-link-btn a:not(:last-child){
+    margin-right: 3px;
+}
+.yu-link-card img{
+    width: 32px;
+}
+

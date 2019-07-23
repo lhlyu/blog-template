@@ -48,14 +48,18 @@ button,input,textarea {
     -webkit-tap-highlight-color: transparent;
 }
 
+
+/* 用户是否可以复制 */
+/**
 a,div,img {
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    user-select: none
+    user-select: none;
 }
+**/
 
 .show {
     display: block;
@@ -63,6 +67,12 @@ a,div,img {
 
 .hide {
     display: none;
+}
+.disabled{
+    color: #a6a6a6;
+}
+.selected{
+    color: #1a6dca !important;
 }
 
 .pointer {

@@ -1,5 +1,3 @@
-
-
 $(function() {
     editormd.markdownToHTML("yu-article-content", {
         htmlDecode      : "style,script,iframe",  // you can filter tags decode
@@ -8,6 +6,7 @@ $(function() {
         tex             : true,  // 默认不解析
         flowChart       : true,  // 默认不解析
         sequenceDiagram : true,  // 默认不解析
+        lineWrapping         : false,
     });
 
     var OwO_demo = new OwO({
