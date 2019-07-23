@@ -534,8 +534,11 @@ footer {
 
     .yu-header-m-main.show,.yu-header-m-slide.show,.yu-main.show,footer.show {
         box-shadow: 1px 0 1px #fff inset;
-        -webkit-transition: all .5s;
-        transform: translate3D(250px,0,0)
+        opacity: 1;
+        /*-webkit-transition: all .5s;*/
+        transition-duration: 500ms;
+        transition-delay: 100ms;
+        transform: translate3D(250px,0,0);
     }
 
     .yu-header-m-slide h2 {
