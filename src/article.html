@@ -109,72 +109,170 @@
                 </div>
                 <div class="yu-card-nr" id="yu-article-content">
                      <textarea>
-这是一个博客博客博客博客博客
+# 欢迎使用 Markdown在线编辑器 MdEditor
 
-- main.go
+**Markdown是一种轻量级的「标记语言」**
 
+
+![markdown](https://www.mdeditor.com/images/logos/markdown.png "markdown")
+
+
+Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面，Markdown文件的后缀名便是“.md”
+
+
+## MdEditor是一个在线编辑Markdown文档的编辑器
+
+*MdEditor扩展了Markdown的功能（如表格、脚注、内嵌HTML等等），以使让Markdown转换成更多的格式，和更丰富的展示效果，这些功能原初的Markdown尚不具备。*
+
+> Markdown增强版中比较有名的有Markdown Extra、MultiMarkdown、 Maruku等。这些衍生版本要么基于工具，如~~Pandoc~~，Pandao；要么基于网站，如GitHub和Wikipedia，在语法上基本兼容，但在一些语法和渲染效果上有改动。
+
+MdEditor源于Pandao的JavaScript开源项目，开源地址[Editor.md](https://github.com/pandao/editor.md "Editor.md")，并在MIT开源协议的许可范围内进行了优化，以适应广大用户群体的需求。向优秀的markdown开源编辑器原作者Pandao致敬。
+
+
+![Pandao editor.md](https://pandao.github.io/editor.md/images/logos/editormd-logo-180x180.png "Pandao editor.md")
+
+
+
+## MdEditor的功能列表演示
+
+# 标题H1
+
+## 标题H2
+
+### 标题H3
+
+#### 标题H4
+
+##### 标题H5
+
+###### 标题H5
+
+### 字符效果和横线等
+----
+
+~~删除线~~ <s>删除线（开启识别HTML标签时）</s>
+
+*斜体字*      _斜体字_
+
+**粗体**  __粗体__
+
+***粗斜体*** ___粗斜体___
+
+上标：X<sub>2</sub>，下标：O<sup>2</sup>
+
+**缩写(同HTML的abbr标签)**
+> 即更长的单词或短语的缩写形式，前提是开启识别HTML标签时，已默认开启
+
+The <abbr title="Hyper Text Markup Language">HTML</abbr> specification is maintained by the <abbr title="World Wide Web Consortium">W3C</abbr>.
+### 引用 Blockquotes
+
+> 引用文本 Blockquotes
+
+引用的行内混合 Blockquotes
+
+### 绘制表格 Tables
+
+| 项目        | 价格   |  数量  |
+| --------   | -----:  | :----:  |
+| 计算机      | $1600   |   5     |
+| 手机        |   $12   |   12   |
+| 管线        |    $1    |  234  |
+
+First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell
+
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
+
+| Function name | Description                    |
+| ------------- | ------------------------------ |
+| `help()`      | Display the help window.       |
+| `destroy()`   | **Destroy your computer!**     |
+
+| Left-Aligned  | Center Aligned  | Right Aligned |
+| :------------ |:---------------:| -----:|
+| col 3 is      | some wordy text | $1600 |
+| col 2 is      | centered        |   $12 |
+| zebra stripes | are neat        |    $1 |
+
+| Item      | Value |
+| --------- | -----:|
+| Computer  | $1600 |
+| Phone     |   $12 |
+| Pipe      |    $1 |
+
+----
+
+### 科学公式 TeX(KaTeX)
+
+$$E=mc^2$$
+
+行内的公式$$E=mc^2$$行内的公式，行内的$$E=mc^2$$公式。
+
+$$x > y$$
+
+$$\(\sqrt{3x-1}+(1+x)^2\)$$
+
+$$\sin(\alpha)^{\theta}=\sum_{i=0}^{n}(x^i + \cos(f))$$
+
+多行公式：
+
+```math
+\displaystyle
+\left( \sum\_{k=1}^n a\_k b\_k \right)^2
+\leq
+\left( \sum\_{k=1}^n a\_k^2 \right)
+\left( \sum\_{k=1}^n b\_k^2 \right)
 ```
-package main
-
-import (
-	"github.com/kataras/iris"
-
-	"github.com/betacraft/yaag/irisyaag"
-	"github.com/betacraft/yaag/yaag"
-)
-
-/*
-	go get github.com/betacraft/yaag/...
-*/
-
-type myXML struct {
-	Result string `xml:"result"`
-}
-
-func main() {
-	app := iris.New()
-
-	yaag.Init(&yaag.Config{ // <- IMPORTANT, init the middleware.
-		On:       true,
-		DocTitle: "Iris",
-		DocPath:  "apidoc.html",
-		BaseUrls: map[string]string{"Production": "", "Staging": ""},
-	})
-	app.Use(irisyaag.New()) // <- IMPORTANT, register the middleware.
-
-	app.Get("/json", func(ctx iris.Context) {
-		ctx.JSON(iris.Map{"result": "Hello World!"})
-	})
-
-	app.Get("/plain", func(ctx iris.Context) {
-		ctx.Text("Hello World!")
-	})
-
-	app.Get("/xml", func(ctx iris.Context) {
-		ctx.XML(myXML{Result: "Hello World!"})
-	})
-
-	app.Get("/complex", func(ctx iris.Context) {
-		value := ctx.URLParam("key")
-		ctx.JSON(iris.Map{"value": value})
-	})
-
-	// Run our HTTP Server.
-	//
-	// Documentation of "yaag" doesn't note the follow, but in Iris we are careful on what
-	// we provide to you.
-	//
-	// Each incoming request results on re-generation and update of the "apidoc.html" file.
-	// Recommentation:
-	// Write tests that calls those handlers, save the generated "apidoc.html".
-	// Turn off the yaag middleware when in production.
-	//
-	// Example usage:
-	// Visit all paths and open the generated "apidoc.html" file to see the API's automated docs.
-	app.Run(iris.Addr(":8080"))
-}
-
+```katex
+\displaystyle
+    \frac{1}{
+        \Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{
+        \frac25 \pi}} = 1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {
+        1+\frac{e^{-6\pi}}
+        {1+\frac{e^{-8\pi}}
+         {1+\cdots} }
+        }
+    }
 ```
+```latex
+f(x) = \int_{-\infty}^\infty
+    \hat f(\xi)\,e^{2 \pi i \xi x}
+    \,d\xi
+```
+### 分页符 Page break
+
+> Print Test: Ctrl + P
+
+[========]
+
+### 绘制流程图 Flowchart
+
+```flow
+st=>start: 用户登陆
+op=>operation: 登陆操作
+cond=>condition: 登陆成功 Yes or No?
+e=>end: 进入后台
+
+st->op->cond
+cond(yes)->e
+cond(no)->op
+```
+[========]
+
+### 绘制序列图 Sequence Diagram
+
+```seq
+Andrew->China: Says Hello
+Note right of China: China thinks\nabout it
+China-->Andrew: How are you?
+Andrew->>China: I am good thanks!
+```
+### End
                      </textarea>
                 </div>
             </div>
@@ -183,7 +281,7 @@ func main() {
                     <i class="iconfont icon-left"></i> 上一篇
                 </div>
                 <div class="yu-card-basic">
-                    <a href="index.html"><i class="iconfont icon-time"></i> 返回</a>
+                    <a href="index.html">返回</a>
                 </div>
                 <div class="yu-card-basic" disabled="disabled">
                     <i class="iconfont icon-right"></i> 下一篇

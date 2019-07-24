@@ -6,6 +6,7 @@ header {
     min-height: 2.625rem;
     background: #fff;
     box-shadow: 0 -2px 3px rgba(26,26,26,.1) inset;
+    animation: fade-animation .5s ease;
 }
 
 .yu-header-pc {
@@ -13,6 +14,7 @@ header {
     width: 1080px;
     max-width: 100%;
     color: #000;
+    -webkit-transition: all .5s;
 }
 
 .yu-header-m {
@@ -173,7 +175,6 @@ header {
     float: right;
     line-height: 1.8rem;
     padding: 0.1rem;
-    margin-right: 0.8rem;
 }
 
 .yu-card-title:hover {
@@ -246,6 +247,7 @@ header {
     height: 2.5rem;
     line-height: 3;
     cursor: pointer;
+    animation: fade-animation .5s ease;
 }
 
 /* left */
@@ -328,6 +330,7 @@ header {
 }
 
 .yu-link-desc {
+    color: #e67474;
     flex: 1;
     padding: 3px;
 }
@@ -470,6 +473,7 @@ footer {
     line-height: 3;
     margin-top: 1rem;
     -webkit-transition: all .5s;
+    animation: fade-animation .5s ease;
 }
 /* footer. */
 
