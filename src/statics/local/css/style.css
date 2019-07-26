@@ -105,7 +105,7 @@ header {
 /* header. */
 
 /* main */
-.yu-main {
+main {
     margin: 0 auto;
     width: 1080px;
     min-height: 89vh;
@@ -526,7 +526,7 @@ footer {
         cursor: pointer;
     }
 
-    .yu-header-m-slide {
+    aside {
         position: fixed;
         top: 0;
         left: -250px;
@@ -544,11 +544,11 @@ footer {
         -webkit-transition: all .5s
     }
 
-    .yu-header-m-main.show,.yu-header-m-slide.show,.yu-main.show,footer.show {
+    .yu-header-m-main.show,aside.show,main.show,footer.show {
         transform: translate3D(250px,0,0);
     }
 
-    .yu-header-m-slide h2 {
+    aside h2 {
         color: #fff
     }
 

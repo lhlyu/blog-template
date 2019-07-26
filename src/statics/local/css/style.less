@@ -1,0 +1,225 @@
+// 页面背景
+@pageBgColor:#f0f0f0;
+// 遮影背景
+@shadowBgColor:#0a0a0a;
+// 主题色
+@themeColor: #ffffff;
+
+@fontSize: 0.8rem;
+@fontFamily:微软雅黑,microsoft yahei;
+
+// 禁止
+@disabledColor: #a6a6a6;
+// 选择
+@selectedColor: #1a6dca;
+// 头像边框
+@avatarBorder: 3px solid #fff;
+// 主题边框
+@themeBorder: 1px solid #cccccc;
+// 动画
+@fadeAnimation: fade-animation .5s ease;
+// 过渡
+@transition:all .5s;
+
+// normal
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: 0 0;
+  word-wrap: break-word;
+  box-sizing: border-box;
+}
+
+body,html {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-size: @fontSize;
+  background: @pageBgColor;
+  font-family: @fontFamily;
+}
+
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px
+}
+/*定义滚动条轨道*/
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  border-radius: 2em
+}
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb {
+  background-color: #a5a5a5;
+}
+
+
+a {
+  outline: 0;
+  text-decoration: none
+}
+
+button,input,textarea {
+  outline: 0;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+.pointer {
+  cursor: pointer;
+}
+.disabled{
+  color: @disabledColor;
+}
+.selected{
+  color: @selectedColor;
+}
+
+.shadow(@opacity:.2,@zIndex:1){
+  background-color: @shadowBgColor;
+  opacity: @opacity;
+  z-index: @zIndex;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}
+// 粒子动画
+.yu-canvas{
+  .shadow();
+  position: relative;
+}
+// 遮影
+.yu-shadow {
+  .shadow(.3,9999);
+  background-color: @shadowBgColor;
+  position: fixed;
+}
+// 头像
+.avatar {
+  border: @avatarBorder;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+// 用户头像
+.yu-avatar {
+  .avatar;
+  position: relative;
+  top: 50px;
+  left: 32%;
+}
+
+// go top
+.yu-gotop {
+  .pointer;
+  position: fixed;
+  bottom: 70px;
+  right: 70px;
+  text-align: center;
+  line-height: 50px;
+  width: 50px;
+  height: 50px;
+  background-color: @themeColor;
+  color: #f0f0f0;
+  border-radius: 5px;
+  border: @themeBorder;
+  &:hover{
+    color: #000000;
+  }
+}
+
+// core
+// 头部
+header {
+  margin: 0 auto;
+  min-height: 2.625rem;
+  background: @themeColor;
+  box-shadow: 0 2px 0px #cccccc;
+  animation: @fadeAnimation;
+}
+
+.yu-header-pc {
+  margin: 0 auto;
+  width: 1080px;
+  max-width: 100%;
+  color: #000;
+  transition: @transition;
+}
+.yu-header-m {
+  .hide;
+}
+.yu-header-pc-title {
+  float: left;
+  margin: 0 1rem;
+  line-height: 2.625rem;
+}
+.yu-header-pc-title a {
+  color: #000;
+  font-size: 1.375rem;
+}
+.yu-header-pc-menu {
+  display: inline-block;
+}
+.yu-header-pc-menu ul {
+  list-style: none;
+}
+
+.yu-header-pc-menu ul li {
+  float: left;
+  text-align: center;
+  line-height: 2.625rem;
+}
+
+.yu-header-pc-menu ul li a {
+  .pointer;
+  padding: 0 11px;
+  color: #222;
+}
+.yu-header-pc-search {
+  .pointer;
+  position: relative;
+  float: right;
+  padding: 0 1rem;
+  font-size: 1.3rem;
+  line-height: 2.625rem;
+}
+
+
+/** 动画 **/
+@keyframes fade-animation {
+  from {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes hide-animation {
+  to {
+    opacity: 1
+  }
+
+  50% {
+    opacity: .5
+  }
+
+  0% {
+    opacity: 0
+  }
+}
+/** 动画. **/
