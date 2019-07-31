@@ -89,6 +89,25 @@ button,input,textarea {
   color: @selectedColor;
 }
 
+/*** ufo ***/
+.ufo{
+  position: fixed;
+  right: 50px;
+  bottom: 100px;
+  padding: 2px;
+  width: 50px;
+  height: 100px;
+  border: solid 1px #cccccc;
+  text-align: center;
+  span{
+    display: block;
+    width: 40px;
+    height: 40px;
+    padding: 20px;
+  }
+}
+/*** ufo.end ***/
+
 /*** header ***/
 // 头部
 header{
@@ -102,7 +121,7 @@ header{
     width: @mainWidth;
     max-width: 100%;
     margin: 0 auto;
-    line-height: 2.5;
+    line-height: 2.1;
     padding: 7px 20px;
     // nav 头像
     .nav-avatar{
@@ -136,6 +155,9 @@ header{
           }
           &:hover{
             font-weight: bold;
+          }
+          i{
+            margin-right: 5px;
           }
         }
       }

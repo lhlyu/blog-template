@@ -57,6 +57,24 @@ textarea {
 .selected {
   color: #1a6dca;
 }
+/*** ufo ***/
+.ufo {
+  position: fixed;
+  right: 50px;
+  bottom: 100px;
+  padding: 2px;
+  width: 50px;
+  height: 100px;
+  border: solid 1px #cccccc;
+  text-align: center;
+}
+.ufo span {
+  display: block;
+  width: 40px;
+  height: 40px;
+  padding: 20px;
+}
+/*** ufo.end ***/
 /*** header ***/
 header {
   height: 3rem;
@@ -69,7 +87,7 @@ header nav {
   width: 1024px;
   max-width: 100%;
   margin: 0 auto;
-  line-height: 2.5;
+  line-height: 2.1;
   padding: 7px 20px;
 }
 header nav .nav-avatar {
@@ -103,6 +121,9 @@ header nav menu ul li.active {
 }
 header nav menu ul li:hover {
   font-weight: bold;
+}
+header nav menu ul li i {
+  margin-right: 5px;
 }
 header nav .search {
   float: right;
@@ -214,4 +235,3 @@ header nav .search input {
 /*** main.end ***/
 /*** footer ***/
 /*** footer.end ***/
-/*# sourceMappingURL=style.css.map */
